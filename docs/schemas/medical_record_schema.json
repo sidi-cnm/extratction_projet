@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "MedicalRecord",
+    "type": "object",
+    "properties": {
+      "patient": {
+        "type": "object",
+        "properties": {
+          "id": {"type": ["string","null"]},
+          "nom": {"type": "string"},
+          "date_naissance": {"type": "string","format":"date"},
+          "sexe": {"type": "string"},
+          "adresse": {"type": ["string","null"]}
+        },
+        "required": ["nom","date_naissance","sexe"]
+      },
+      "resume_structure": {"type":"object"},
+      "meta": {
+        "type":"object",
+        "properties": {
+          "langue":{"type":"string"},
+          "source":{"type":"string"},
+          "date_extraction":{"type":"string","format":"date"},
+          "modele_utilise":{"type":"string"}
+        },
+        "required":["langue","date_extraction","modele_utilise"]
+      }
+    },
+    "required": ["patient","resume_structure","meta"]
+  }
+  
