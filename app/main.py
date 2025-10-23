@@ -4,4 +4,5 @@ app = FastAPI(title="Medical Doc Pipeline API", version="0.1.0")
 
 @app.get("/health")
 def health():
+    print("Health check endpoint called")
     return {"status": "ok"}
