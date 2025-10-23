@@ -1,0 +1,12 @@
+Disons que tu modifies ton modèle :
+models/new_model_v2.pt
+
+➡️ Workflow :
+# actualise la version DVC
+dvc commit models.dvc
+# pousse le modèle sur DagsHub
+dvc push
+# pousse le pointeur .dvc sur GitHub
+git add models.dvc
+git commit -m "New model version 2"
+git push
