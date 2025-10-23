@@ -3,3 +3,6 @@
 Miniconda3-latest-*.sh
 
 data/
+/data
+/models
+/outputs
