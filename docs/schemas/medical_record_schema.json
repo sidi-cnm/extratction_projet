@@ -28,4 +28,106 @@
     },
     "required": ["patient","resume_structure","meta"]
   }
+
+
+
+
+  
+
+
+  // Example of a medical record in French
+  {
+    "patient": {
+      "id": "auto_or_hashed",                 // identifiant anonyme ou hashé
+      "nom": "Jean Dupont",
+      "date_naissance": "1980-05-12",
+      "sexe": "Masculin",
+      "adresse": "Rue des Lilas, 12345 Villeville"
+    },
+  
+    "antecedents_medicaux": [
+      {
+        "condition": "Hypertension artérielle",
+        "date_diagnostic": "2010-01-01",
+        "status": "active"
+      },
+      {
+        "condition": "Appendicectomie",
+        "date_diagnostic": "2015-01-01",
+        "status": "résolue"
+      },
+      {
+        "condition": "Allergie sévère aux pénicillines",
+        "type": "allergie",
+        "gravite": "sévère"
+      }
+    ],
+  
+    "traitements_actuels": [
+      {
+        "medicament": "Lisinopril",
+        "dose": "10 mg",
+        "posologie": "1 comprimé par jour",
+        "indication": "Hypertension artérielle",
+        "debut_traitement": null,
+        "fin_traitement": null
+      }
+    ],
+  
+    "consultations": [
+      {
+        "date": "2023-01-03",
+        "motif": "Suivi de l’hypertension artérielle",
+        "observations": "Tension artérielle sous contrôle, aucun symptôme majeur.",
+        "diagnostic": "Hypertension contrôlée",
+        "traitement_prescrit": null
+      },
+      {
+        "date": "2022-09-12",
+        "motif": "Douleurs abdominales",
+        "diagnostic": "Gastro-entérite",
+        "traitement_prescrit": "Repos et traitement symptomatique"
+      }
+    ],
+  
+    "examens": [
+      {
+        "date": "2023-02-25",
+        "type": "Numération sanguine",
+        "resultat": "Taux de globules rouges et blancs dans les limites normales."
+      },
+      {
+        "date": "2022-12-15",
+        "type": "Radiographie thoracique",
+        "resultat": "Aucune anomalie détectée."
+      }
+    ],
+  
+    "resume_structure": {
+      "maladies": [
+        {
+          "nom": "Hypertension artérielle",
+          "premiere_mention": "2010-01-01",
+          "statut": "active",
+          "derniere_consultation": "2023-01-03"
+        },
+        {
+          "nom": "Gastro-entérite",
+          "premiere_mention": "2022-09-12",
+          "statut": "résolue"
+        }
+      ],
+      "allergies": ["Pénicillines"],
+      "traitements": ["Lisinopril 10 mg, 1x/jour"]
+    },
+  
+    "meta": {
+      "langue": "fr",
+      "source": "scan_pdf_ocr",
+      "date_extraction": "2025-10-23",
+      "modele_utilise": "LLM_medical_v1",
+      "confiance_moyenne": 0.95
+    }
+  }
+  
   
