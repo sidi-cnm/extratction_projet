@@ -10,3 +10,6 @@ dvc push
 git add models.dvc
 git commit -m "New model version 2"
 git push
+
+
+mistral api : 2gFcRaKLzhzz8bHVK0pykVLTeD3jMVLO

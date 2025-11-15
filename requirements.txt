@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+mistralai
+pdfplumber
+jsonschema
+python-dotenv
+pydantic>=2
