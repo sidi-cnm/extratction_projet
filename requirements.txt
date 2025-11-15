@@ -7,4 +7,4 @@ python-dotenv
 pydantic>=2
 pydantic-settings
 python-multipart
-
+requests
