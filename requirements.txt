@@ -5,3 +5,4 @@ pdfplumber
 jsonschema
 python-dotenv
 pydantic>=2
+pydantic-settings

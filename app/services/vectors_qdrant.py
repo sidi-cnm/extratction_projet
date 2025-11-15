@@ -2,12 +2,17 @@ import os, uuid
 from typing import List, Dict
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance, PointStruct, Filter, FieldCondition, MatchValue
+from dotenv import load_dotenv
 
-QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
+load_dotenv()  # par défaut, il cherche un fichier .env à la racine
+QDRANT_HOST = os.getenv("QDRANT_HOST")
+print("QDRANT_HOST =", QDRANT_HOST)
 QDRANT_PORT = int(os.getenv("QDRANT_PORT", "6333"))
-COLLECTION = os.getenv("QDRANT_COLLECTION", "medical_records")
 
-client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
+COLLECTION = os.getenv("QDRANT_COLLECTION", "medical_records")
+API_KEY= os.getenv("api_key")
+print("API_KEY" , API_KEY)
+client = QdrantClient(url=QDRANT_HOST, api_key=API_KEY)
 
 def ensure_collection(vector_size: int):
     # recrée la collection si elle n'existe pas avec la bonne dimension

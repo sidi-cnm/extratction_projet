@@ -1,3 +1,4 @@
+# app/schemas.py
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any
 
@@ -8,11 +9,21 @@ class ExtractFileResponse(BaseModel):
     filename: str
     size: int
     content_type: str
-    json: Dict[str, Any]
+    # champ interne json_ mais on accepte/renvoit "json" via alias
+    json_: Dict[str, Any] = Field(..., alias="json")
     valid: bool = True
     validation_error: Optional[str] = None
 
+    # Permet de construire le modèle en passant soit json soit json_
+    model_config = {
+        "populate_by_name": True
+    }
+
 class ExtractResponse(BaseModel):
-    json: Dict[str, Any]
+    json_: Dict[str, Any] = Field(..., alias="json")
     valid: bool = True
     validation_error: Optional[str] = None
+
+    model_config = {
+        "populate_by_name": True
+    }
